@@ -1,0 +1,10 @@
+name: deployment workflow
+on: push
+jobs:
+  example-job:
+     runs-on: ubuntu-latest
+     steps: 
+     - name: first message
+       run: echo "happy to create my first github job"
+
+      
