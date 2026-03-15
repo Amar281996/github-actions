@@ -1,0 +1,14 @@
+name: shellscript execution
+on: push
+jobs:
+    Print-prime-number:
+        runs-on: ubuntu-latest
+        steps:
+        - name: list files
+          run: ls -lrt
+        - name: give file permission
+          run: chmod +x prime.sh
+        - name: Execution of Scripting
+          run: ./prime.sh    
+
+
