@@ -12,10 +12,19 @@ jobs:
           run: chmod +x prime.sh
         - name: Execution of Scripting
           run: ./prime.sh
+        - name: upload a file    
+          uses: actions/upload-artifact@v4
+          with:
+           name: my-artifact
+           path: prime.sh    
     Job-2:
         needs: [Print-prime-number]
         runs-on: ubuntu-latest
         steps:
+        - name: upload a file    
+          uses: actions/download-artifact@v4
+          with:
+           name: my-artifact    
         - name: read the file
           run: grep -i "prime" prime.sh
         - name: Status
