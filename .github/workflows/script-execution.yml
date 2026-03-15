@@ -21,12 +21,14 @@ jobs:
         needs: [Print-prime-number]
         runs-on: ubuntu-latest
         steps:
-        - name: upload a file    
+        - name: Download a file    
           uses: actions/download-artifact@v4
           with:
            name: my-artifact    
         - name: read the file
-          run: grep -i "prime" prime.sh
+          run: |
+            grep -i "prime" prime.sh
+            ls -ls
         - name: Status
           run: echo "found the file successfully"
     
