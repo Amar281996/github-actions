@@ -4,7 +4,13 @@ jobs:
   example-job:
      runs-on: ubuntu-latest
      steps: 
+     - name: checkout the code
+       uses: actions/checkout@v6 
      - name: first message
        run: echo "happy to create my first github job"
+     - name: read the file context
+       run: cat README.md
+     - name: verify the files
+       run: ls -la  
 
       
