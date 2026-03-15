@@ -6,6 +6,8 @@ jobs:
         steps:
         - name: list files
           run: ls -lrt
+        - name: git checkout
+          uses: actions/checkout@v6  
         - name: give file permission
           run: chmod +x prime.sh
         - name: Execution of Scripting
