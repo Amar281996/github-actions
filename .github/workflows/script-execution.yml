@@ -11,6 +11,16 @@ jobs:
         - name: give file permission
           run: chmod +x prime.sh
         - name: Execution of Scripting
-          run: ./prime.sh    
+          run: ./prime.sh
+    Job-2:
+        needs: [Print-prime-number]
+        runs-on: ubuntu-latest
+        steps:
+        - name: read the file
+          run: grep -i "prime" prime.sh
+        - name: Status
+          run: echo "found the file successfully"
+    
+
 
 
